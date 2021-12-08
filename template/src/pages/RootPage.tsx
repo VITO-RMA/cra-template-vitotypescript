@@ -14,26 +14,22 @@ export function RootPage() {
     }
   }
 
-  return render();
-
-  function render() {
-    return (
-      <SnackbarProvider
-        maxSnack={3}
-        ref={notistackRef}
-        action={(key: SnackbarKey) => (
-          <IconButton
-            style={{ color: "#fff" }}
-            onClick={() => onClickDismiss(key)}
-          >
-            <Close />
-          </IconButton>
-        )}
-      >
-        <Routes>
-          <Route path="/" element={<AppPage />} />
-        </Routes>
-      </SnackbarProvider>
-    );
-  }
+  return (
+    <SnackbarProvider
+      maxSnack={3}
+      ref={notistackRef}
+      action={(key: SnackbarKey) => (
+        <IconButton
+          style={{ color: "#fff" }}
+          onClick={() => onClickDismiss(key)}
+        >
+          <Close />
+        </IconButton>
+      )}
+    >
+      <Routes>
+        <Route path="/" element={<AppPage />} />
+      </Routes>
+    </SnackbarProvider>
+  );
 }
