@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppPage } from "./AppPage";
 
-export const RootPage = () => {
+export function RootPage() {
   const notistackRef = useRef<SnackbarProvider | null>(null);
 
   function onClickDismiss(key: SnackbarKey) {
@@ -14,22 +14,26 @@ export const RootPage = () => {
     }
   }
 
-  return (
-    <SnackbarProvider
-      maxSnack={3}
-      ref={notistackRef}
-      action={(key: SnackbarKey) => (
-        <IconButton
-          style={{ color: "#fff" }}
-          onClick={() => onClickDismiss(key)}
-        >
-          <Close />
-        </IconButton>
-      )}
-    >
-      <Routes>
-        <Route path="/" element={<AppPage />} />
-      </Routes>
-    </SnackbarProvider>
-  );
-};
+  return render();
+
+  function render() {
+    return (
+      <SnackbarProvider
+        maxSnack={3}
+        ref={notistackRef}
+        action={(key: SnackbarKey) => (
+          <IconButton
+            style={{ color: "#fff" }}
+            onClick={() => onClickDismiss(key)}
+          >
+            <Close />
+          </IconButton>
+        )}
+      >
+        <Routes>
+          <Route path="/" element={<AppPage />} />
+        </Routes>
+      </SnackbarProvider>
+    );
+  }
+}

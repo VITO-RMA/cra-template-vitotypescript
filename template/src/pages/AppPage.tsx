@@ -1,5 +1,5 @@
 import { AppLayout } from "../layout/AppLayout";
 
-export const AppPage = () => {
+export function AppPage() {
   return <AppLayout>Start your content</AppLayout>;
-};
+}

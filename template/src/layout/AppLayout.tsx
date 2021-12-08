@@ -5,8 +5,9 @@ interface Props {
   children: ReactNode;
 }
 
-export const AppLayout = (props: Props) => {
+export function AppLayout(props: Props) {
   const { children } = props;
+
   return (
     <>
       <header>
@@ -15,4 +16,4 @@ export const AppLayout = (props: Props) => {
       <main>{children}</main>
     </>
   );
-};
+}
