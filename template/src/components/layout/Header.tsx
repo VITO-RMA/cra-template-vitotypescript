@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 interface Props {}
 
-export const Header = (props: Props) => {
+export function Header(props: Props) {
   const { t } = useTranslation();
 
   return (
@@ -13,7 +13,7 @@ export const Header = (props: Props) => {
       </Typography>
     </StyledToolbar>
   );
-};
+}
 
 const StyledToolbar = styled(Toolbar)`
   & > *:nth-child(2) {

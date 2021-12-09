@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AppPage } from "./AppPage";
 
-export const RootPage = () => {
+export function RootPage() {
   const notistackRef = useRef<SnackbarProvider | null>(null);
 
   function onClickDismiss(key: SnackbarKey) {
@@ -32,4 +32,4 @@ export const RootPage = () => {
       </Routes>
     </SnackbarProvider>
   );
-};
+}
