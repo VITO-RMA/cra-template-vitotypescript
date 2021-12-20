@@ -10,7 +10,9 @@ import CacheBackend from "i18next-localstorage-backend";
 const VERSION = "0.1.1";
 
 const CacheBackendOptions = {
-  prefix: `${process.env.REACT_APP_NAME || "i18next_te_"}`,
+  prefix: `i18next_${process.env.REACT_APP_NAME || "_te"}_${
+    process.env.REACT_APP_VERSION || ""
+  }_`,
   expirationTime: 7 * 24 * 60 * 60 * 1000,
   defaultVersion: VERSION,
   versions: {},
