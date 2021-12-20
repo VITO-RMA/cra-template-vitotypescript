@@ -21,15 +21,11 @@ export const theme = ((options: ThemeOptions) => {
     white: "#fff",
   };
   const primary: SimplePaletteColorOptions = {
-    light: "#32a2db",
     main: "#32a2db",
-    dark: "#32a2db",
     contrastText: commonColors.white,
   };
   const secondary: SimplePaletteColorOptions = {
-    light: "#f68121",
     main: "#f68121",
-    dark: "#f68121",
     contrastText: commonColors.white,
   };
   const success: SimplePaletteColorOptions = {
