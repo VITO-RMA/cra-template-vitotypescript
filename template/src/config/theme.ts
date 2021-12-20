@@ -21,15 +21,11 @@ export const theme = ((options: ThemeOptions) => {
     white: "#fff",
   };
   const primary: SimplePaletteColorOptions = {
-    light: "#32a2db",
     main: "#32a2db",
-    dark: "#32a2db",
     contrastText: commonColors.white,
   };
   const secondary: SimplePaletteColorOptions = {
-    light: "#f68121",
     main: "#f68121",
-    dark: "#f68121",
     contrastText: commonColors.white,
   };
   const success: SimplePaletteColorOptions = {
@@ -51,10 +47,10 @@ export const theme = ((options: ThemeOptions) => {
     contrastText: commonColors.white,
   };
   const text: TextColors = {
-    primary: commonColors.black,
-    secondary: commonColors.white,
-    disabled: "rgba(204, 204, 204, 1)",
-    hint: "rgba(0, 0, 0, 0.38)",
+    primary: "rgba(0, 0, 0, 1)",
+    secondary: "rgba(0, 0, 0, 0.8)",
+    disabled: "rgba(0, 0, 0, 0.4)",
+    hint: "rgba(0, 0, 0, 0.4)",
   };
 
   return createTheme({
