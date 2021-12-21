@@ -29,6 +29,19 @@ const HTTPBackendOptions = {
   reloadInterval: false,
 };
 
+const backends = [
+  CacheBackend, // primary
+  HTTPBackend, // fallback
+];
+
+const backendOptions = [CacheBackendOptions, HTTPBackendOptions];
+
+//If Development REMOVE local caching!
+if (process.env.NODE_ENV === "development") {
+  backends.shift();
+  backendOptions.shift();
+}
+
 i18n
   // load translation using xhr -> see /public/locales
   // learn more: https://github.com/i18next/i18next-xhr-backend
@@ -47,11 +60,8 @@ i18n
         escapeValue: false, // not needed for react as it escapes by default
       },
       backend: {
-        backends: [
-          CacheBackend, // primary
-          HTTPBackend, // fallback
-        ],
-        backendOptions: [CacheBackendOptions, HTTPBackendOptions],
+        backends: backends,
+        backendOptions: backendOptions,
       },
     },
     (err, t) => {
