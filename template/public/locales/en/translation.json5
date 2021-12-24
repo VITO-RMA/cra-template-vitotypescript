@@ -1,0 +1,10 @@
+{
+  title: "VITO",
+  label: {
+    somethingWentWrong: "Oops, something went wrong",
+    tryAgainAndOtherOptions: "Try again with other options",
+    tryAgain: "Try again",
+    errorDetails: "Error details",
+  },
+  message: {},
+}
